@@ -1,0 +1,22 @@
+<div id="search-results">
+    <ul class="forwardsTrips">
+      Outgoing Flights
+        <li *ngFor="let flight of flightData  | filter: sourceCity: destinationCity: departureDate: maxPrice">
+          Flight No.: {{flight.flightNo}}<br>
+          Origin: {{flight.origin}}<br>
+          Destination: {{flight.destination}}<br>
+          Date: {{flight.date}}<br>
+          Price: {{flight.price}}<br>
+        </li>
+      </ul>
+    <ul *ngIf="!oneWay" class="returnTrips">
+      Incoming Flights
+        <li *ngFor="let flight of flightData  | filter: destinationCity: sourceCity: arrivalDate: maxPrice">
+          Flight No.: {{flight.flightNo}}<br>
+          Origin: {{flight.origin}}<br>
+          Destination: {{flight.destination}}<br>
+          Date: {{flight.date}}<br>
+          Price: {{flight.price}}<br>
+        </li>
+    </ul>
+</div>

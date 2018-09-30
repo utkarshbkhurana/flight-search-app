@@ -1,0 +1,7 @@
+#footer-wrapper {
+    width: 100%;
+    background: black;
+    height: 70px;
+    position: fixed;
+    bottom: 0;
+}

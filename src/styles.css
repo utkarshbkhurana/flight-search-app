@@ -1,0 +1,6 @@
+/* You can add global styles to this file, and also import other style files */
+@import './assets/normalize.css';
+
+body {
+    font-family: Helvetica, "Times New Roman", Times, serif;
+}

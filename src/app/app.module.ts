@@ -14,8 +14,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { FilterPipe } from './filter.pipe';
 
 const appRoutes: Routes = [
+  { path: '', redirectTo: 'one-way', pathMatch: 'full'},
   { path: 'one-way', component: OneWayFlightComponent},
-  { path: 'return', component: ReturnFlightComponent}
+  { path: 'return', component: ReturnFlightComponent},
+  { path: '**', component: OneWayFlightComponent}
 ];
 
 @NgModule({

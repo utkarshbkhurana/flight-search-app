@@ -7,23 +7,27 @@
           </div>
           <div id="destination-city">
             <input type="text" name="To" placeholder="Enter destination city" class="form-control" id="" [(ngModel)]="destinationCity">
-            <input *ngIf="!oneWay" class="form-control" type="date" name="dor" [(ngModel)]="arrivalDate">
+            <input *ngIf="!isOneWay" class="form-control" type="date" name="dor" [(ngModel)]="arrivalDate">
           </div>
           <div class="slidecontainer">
-              <input type="range" min="1000" max="10000" [value]="maxPrice" class="slider" id="myRange" [(ngModel)]="maxPrice">
+              <input type="range" min="1000" max="10000" [value]="maxPrice" class="slider" id="myRange" (change)="getSearchResults()" [(ngModel)]="maxPrice">
               <span>Price: 0 - {{maxPrice}} INR</span>
           </div>
           <input type="submit" class="form-control" value="Search" (click)="getSearchResults()">
         </div>      
       </div>
+      <div id="source-alert" class="alert">*Source is required</div>
+      <div id="dest-alert" class="alert">*Destination is required</div>
       <app-search-results 
         [hidden] = "!showResults"
+        [showResults] = "showResults"
         [flightData]="flightData"
         [sourceCity]="sourceCity"
         [destinationCity]="destinationCity"
         [departureDate]="departureDate"
         [arrivalDate]="arrivalDate"
-        [maxPrice]="maxPrice">
+        [maxPrice]="maxPrice"
+        [isOneWay]="isOneWay">
       </app-search-results>
 </div>
 

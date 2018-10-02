@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-one-way-flight',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OneWayFlightComponent implements OnInit {
 
+  isOneWay = true;  
   constructor() { }
 
   ngOnInit() {

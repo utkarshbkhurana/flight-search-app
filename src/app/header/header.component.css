@@ -7,4 +7,13 @@
     justify-content: center;
     align-items: center;
     font-size: 24px;
+    text-align: left;
+}
+
+@media only screen and (max-width: 600px) {
+    #header-wrapper {
+        font-size: 22px;
+        text-align: center;
+    }
+
 }

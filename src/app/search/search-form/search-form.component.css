@@ -1,13 +1,9 @@
-.form-container {
-    display: flex;
-}
-
 
 .form-wrapper {
     max-width: 500px;
     padding: 10px 20px;
     background: #f4f7f8;
-    margin: 25px 30px;
+    margin: 25px auto 0 auto;
     padding: 20px;
     background: #f4f7f8;
     border-radius: 8px;
@@ -103,4 +99,14 @@ input[type="submit"]:hover
     height: 25px; /* Slider handle height */
     background: #1abc9c; /* Green background */
     cursor: pointer; /* Cursor on hover */
+}
+
+.alert {
+    display: none;
+    font-weight: bold;
+    font-size: 14px;
+    color: red;
+    margin-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }

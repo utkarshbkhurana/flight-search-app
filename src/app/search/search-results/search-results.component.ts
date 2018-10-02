@@ -13,6 +13,9 @@ export class SearchResultsComponent implements OnInit {
   @Input() arrivalDate;
   @Input() destinationCity;
   @Input() maxPrice;
+  @Input() showResults;
+  @Input() isOneWay;
+
   constructor() { }
 
   ngOnInit() {

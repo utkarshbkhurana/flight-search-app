@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SearchService {
 
-  apiUrl="https://api.myjson.com/bins/14lgdc";
+  apiUrl="https://api.myjson.com/bins/wwks0";
 
   constructor(
     private http: HttpClient

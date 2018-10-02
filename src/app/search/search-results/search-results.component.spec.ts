@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SearchResultsComponent } from './search-results.component';
+import { SearchFormComponent } from './../search-form/search-form.component';
+import { SearchResultsComponent } from './../search-results/search-results.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 describe('SearchResultsComponent', () => {
   let component: SearchResultsComponent;
@@ -8,7 +11,8 @@ describe('SearchResultsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SearchResultsComponent ]
+      declarations: [ SearchResultsComponent, SearchFormComponent ],
+      imports: [FormsModule, HttpClientModule]
     })
     .compileComponents();
   }));
@@ -22,4 +26,5 @@ describe('SearchResultsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });

@@ -1,6 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ReturnFlightComponent } from './return-flight.component';
+import { SearchComponent } from './../search/search.component';
+import { SearchFormComponent } from './../search/search-form/search-form.component';
+import { SearchResultsComponent } from './../search/search-results/search-results.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 describe('ReturnFlightComponent', () => {
   let component: ReturnFlightComponent;
@@ -8,7 +13,8 @@ describe('ReturnFlightComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ReturnFlightComponent ]
+      declarations: [ ReturnFlightComponent, SearchComponent, SearchFormComponent, SearchResultsComponent ],
+      imports: [FormsModule, HttpClientModule]
     })
     .compileComponents();
   }));

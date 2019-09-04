@@ -4,9 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { SearchComponent } from './search/search.component';
-import { SearchFormComponent } from './search/search-form/search-form.component';
-import { SearchResultsComponent } from './search/search-results/search-results.component';
+import { SearchFormComponent } from './search-form/search-form.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
 import { RouterModule, Routes } from '@angular/router';
 import { OneWayFlightComponent } from './one-way-flight/one-way-flight.component';
 import { ReturnFlightComponent } from './return-flight/return-flight.component';
@@ -25,7 +24,6 @@ const appRoutes: Routes = [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    SearchComponent,
     SearchFormComponent,
     SearchResultsComponent,
     OneWayFlightComponent,

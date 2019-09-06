@@ -11,6 +11,7 @@ import { OneWayFlightComponent } from './one-way-flight/one-way-flight.component
 import { ReturnFlightComponent } from './return-flight/return-flight.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FilterPipe } from './filter.pipe';
+import { TicketComponent } from './ticket/ticket.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: 'one-way', pathMatch: 'full'},
@@ -28,7 +29,8 @@ const appRoutes: Routes = [
     SearchResultsComponent,
     OneWayFlightComponent,
     ReturnFlightComponent,
-    FilterPipe
+    FilterPipe,
+    TicketComponent
   ],
   imports: [
     BrowserModule,

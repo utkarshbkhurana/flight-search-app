@@ -1,15 +1,16 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { SearchService } from '../services/search.service';
 
 
 @Component({
-  selector: 'app-search-form',
+  selector: 'search-form',
   templateUrl: './search-form.component.html',
   styleUrls: ['./search-form.component.css']
 })
 export class SearchFormComponent implements OnInit {
 
   @Input() isOneWay: boolean;
+  @Output() onFlightSearch = new EventEmitter();
   sourceCity: string = '';
   departureDate: string = '';
   arrivalDate: string = '';
@@ -28,13 +29,14 @@ export class SearchFormComponent implements OnInit {
   }
 
 
-  getAllFlights(){
-    this.searchService.getSearchResults().subscribe(     
-      (data) => {
-        this.allFlights = data;
-      }
-    );
-    ;
+  async getAllFlights(){
+    let data = await this.searchService.getSearchResults().toPromise();
+    if(data) {
+      this.allFlights = data;
+    }
+    else {
+      console.log('Failed to get flights');
+    }
   }
 
   getSearchResults() {
@@ -48,6 +50,7 @@ export class SearchFormComponent implements OnInit {
       return;
     }
     this.getAllFlights();
+    console.log('got flights',this.allFlights)
           /* filter outgoing flights */
     this.filterFlights(true,this.sourceCity,this.destinationCity,this.departureDate,this.maxPrice);
     if (!this.isOneWay) {
@@ -56,8 +59,7 @@ export class SearchFormComponent implements OnInit {
       
     }
     this.showResults = true;
-
-   
+    this.onFlightSearch.emit({searchResults: this.flightData});
   }
 
   resetResults() {
@@ -67,34 +69,36 @@ export class SearchFormComponent implements OnInit {
   }
  
   filterFlights(isOutgoing: boolean, source: string, dest: string, doa: string, priceLimit: number) {
+    console.log(doa)
     if (isOutgoing) {
-      this.flightData.outgoing = this.allFlights['flightData'].filter(
+      this.flightData.outgoing = this.allFlights['flights'].filter(
         item => {
-          if(doa) {
-            return item['origin']===(source.toLowerCase()) && 
-            item['destination']===(dest.toLowerCase()) && 
-            parseInt(item['price'])<=priceLimit && item['date']===doa;
+          if (doa && doa !== '') {
+            console.log('is doa',doa==='')
+            return item['origin'] === (source.toLowerCase()) &&
+              item['destination'] === (dest.toLowerCase()) &&
+              parseInt(item['price']) <= priceLimit && item['date'] === doa;
           }
-          else return item['origin']===(source.toLowerCase()) && 
-          item['destination']===(dest.toLowerCase()) && 
-          parseInt(item['price'])<=priceLimit;
-  
-          });
-    } else {
-      this.flightData.incoming = this.allFlights['flightData'].filter(
-        item => {
-          if(doa) {
-            return item['origin']===(source.toLowerCase()) && 
-            item['destination']===(dest.toLowerCase()) && 
-            parseInt(item['price'])<=priceLimit && item['date']===doa;
-          }
-          else return item['origin']===(source.toLowerCase()) && 
-          item['destination']===(dest.toLowerCase()) && 
-          parseInt(item['price'])<=priceLimit;
-  
-          });
-    }
+          else return item['origin'] === (source.toLowerCase()) &&
+            item['destination'] === (dest.toLowerCase()) &&
+            parseInt(item['price']) <= priceLimit;
 
+        });
+    } else {
+      console.log('is doa',doa==='')
+      this.flightData.incoming = this.allFlights['flights'].filter(
+        item => {
+          if (doa && doa !== '') {
+            return item['origin'] === (source.toLowerCase()) &&
+              item['destination'] === (dest.toLowerCase()) &&
+              parseInt(item['price']) <= priceLimit && item['date'] === doa;
+          }
+          else return true //return item['origin'] === (source.toLowerCase()) &&
+            item['destination'] === (dest.toLowerCase()) &&
+            parseInt(item['price']) <= priceLimit;
+
+        });
+    }
   }
 
 }

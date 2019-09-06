@@ -6,13 +6,13 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SearchService {
 
-  apiUrl="https://api.myjson.com/bins/wwks0";
+  dataUrl = "../assets/flights.json";
 
   constructor(
     private http: HttpClient
   ) { }
 
   getSearchResults() {
-    return this.http.get(this.apiUrl);
+    return this.http.get(this.dataUrl);
   }
 }

@@ -6,8 +6,18 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'flight-search-app';
   constructor(
     private router: Router
-  ){} 
+  ){}
+
+  title = 'flight-search-app';
+  showResults = false;
+  flightData = {};
+
+  displaySearchResults($event) {
+    console.log('event',$event)
+    this.showResults = true;
+    this.flightData = $event.searchResults;
+  }
+
 }

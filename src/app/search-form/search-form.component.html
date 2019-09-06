@@ -1,5 +1,9 @@
 <div class="form-container">
     <div class="form-wrapper">
+        <div class="tab">
+            <button class="tablinks" routerLinkActive="active" routerLink="/one-way">One-Way</button>
+            <button class="tablinks" routerLinkActive="active" routerLink="/return">Return</button>
+        </div>
         <div class="form">
           <div id="source-city">
             <input type="text" name="From" placeholder="Enter source city" class="form-control" id="" [(ngModel)]="sourceCity">
@@ -15,19 +19,8 @@
           </div>
           <input type="submit" class="form-control" value="Search" (click)="getSearchResults()">
         </div>      
-      </div>
+    </div>
       <div id="source-alert" class="alert">*Source is required</div>
       <div id="dest-alert" class="alert">*Destination is required</div>
-      <app-search-results 
-        [hidden] = "!showResults"
-        [showResults] = "showResults"
-        [flightData]="flightData"
-        [sourceCity]="sourceCity"
-        [destinationCity]="destinationCity"
-        [departureDate]="departureDate"
-        [arrivalDate]="arrivalDate"
-        [maxPrice]="maxPrice"
-        [isOneWay]="isOneWay">
-      </app-search-results>
 </div>
 

@@ -34,8 +34,13 @@ export class SearchFormComponent implements OnInit {
 
 
   async getAllFlights() {
+    if(localStorage.getItem('allFlights')) {
+      this.allFlights = JSON.parse(localStorage.getItem('allFlights'));
+      return;
+    }
     let data = await this.searchService.getSearchResults().toPromise();
     if (data) {
+      localStorage.setItem('allFlights',JSON.stringify(data));
       this.allFlights = data;
     }
     else {

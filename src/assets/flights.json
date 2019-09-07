@@ -31,7 +31,7 @@
             "destination" : "Delhi",
             "departureDate" : "2019-09-11T14:00:00.000Z",
             "arrivalDate" : "2019-09-11T18:00:00.000Z",
-            "price" : "3200"
+            "price" : "2200"
         },
         {
             "flightNo" : "AI-101",
@@ -39,7 +39,7 @@
             "destination" : "Kochi",
             "departureDate" : "2019-09-12T18:00:00.000Z",
             "arrivalDate" : "2019-09-12T21:00:00.000Z",
-            "price" : "2500"
+            "price" : "2590"
         },
         {
             "flightNo" : "AI-102",
@@ -55,7 +55,7 @@
             "destination" : "Kochi",
             "departureDate" : "2019-09-14T18:00:00.000Z",
             "arrivalDate" : "2019-09-14T21:00:00.000Z",
-            "price" : "2500"
+            "price" : "2580"
         },
         {
             "flightNo" : "AI-102",
@@ -71,7 +71,7 @@
             "destination" : "Kochi",
             "departureDate" : "2019-09-15T18:00:00.000Z",
             "arrivalDate" : "2019-09-15T21:00:00.000Z",
-            "price" : "2500"
+            "price" : "2570"
         },
         {
             "flightNo" : "AI-102",
@@ -103,7 +103,7 @@
             "destination" : "Kochi",
             "departureDate" : "2019-09-20T18:00:00.000Z",
             "arrivalDate" : "2019-09-20T21:00:00.000Z",
-            "price" : "2500"
+            "price" : "2600"
         },
         {
             "flightNo" : "AI-102",
@@ -119,7 +119,7 @@
             "destination" : "Kochi",
             "departureDate" : "2019-09-22T18:00:00.000Z",
             "arrivalDate" : "2019-09-22T21:00:00.000Z",
-            "price" : "2500"
+            "price" : "5500"
         },
         {
             "flightNo" : "AI-102",
@@ -127,8 +127,311 @@
             "destination" : "Delhi",
             "departureDate" : "2019-09-22T14:00:00.000Z",
             "arrivalDate" : "2019-09-22T18:00:00.000Z",
+            "price" : "1200"
+        },
+        {
+            "flightNo" : "AI-101",
+            "origin" : "Delhi",
+            "destination" : "Kochi",
+            "departureDate" : "2019-09-25T18:00:00.000Z",
+            "arrivalDate" : "2019-09-25T21:00:00.000Z",
+            "price" : "5500"
+        },
+        {
+            "flightNo" : "AI-102",
+            "origin" : "Kochi",
+            "destination" : "Delhi",
+            "departureDate" : "2019-09-25T14:00:00.000Z",
+            "arrivalDate" : "2019-09-25T18:00:00.000Z",
+            "price" : "1200"
+        },
+        {
+            "flightNo" : "AI-201",
+            "origin" : "Delhi",
+            "destination" : "Mumbai",
+            "departureDate" : "2019-09-10T18:00:00.000Z",
+            "arrivalDate" : "2019-09-10T21:00:00.000Z",
+            "price" : "2200"
+        },
+        {
+            "flightNo" : "AI-202",
+            "origin" : "Mumbai",
+            "destination" : "Delhi",
+            "departureDate" : "2019-09-10T14:00:00.000Z",
+            "arrivalDate" : "2019-09-10T18:00:00.000Z",
             "price" : "3200"
+        },
+        {
+            "flightNo" : "AI-201",
+            "origin" : "Delhi",
+            "destination" : "Mumbai",
+            "departureDate" : "2019-09-11T18:00:00.000Z",
+            "arrivalDate" : "2019-09-11T21:00:00.000Z",
+            "price" : "2200"
+        },
+        {
+            "flightNo" : "AI-202",
+            "origin" : "Mumbai",
+            "destination" : "Delhi",
+            "departureDate" : "2019-09-11T14:00:00.000Z",
+            "arrivalDate" : "2019-09-11T18:00:00.000Z",
+            "price" : "2200"
+        },
+        {
+            "flightNo" : "AI-201",
+            "origin" : "Delhi",
+            "destination" : "Mumbai",
+            "departureDate" : "2019-09-12T18:00:00.000Z",
+            "arrivalDate" : "2019-09-12T21:00:00.000Z",
+            "price" : "2590"
+        },
+        {
+            "flightNo" : "AI-202",
+            "origin" : "Mumbai",
+            "destination" : "Delhi",
+            "departureDate" : "2019-09-12T14:00:00.000Z",
+            "arrivalDate" : "2019-09-12T18:00:00.000Z",
+            "price" : "3200"
+        },
+        {
+            "flightNo" : "AI-201",
+            "origin" : "Delhi",
+            "destination" : "Mumbai",
+            "departureDate" : "2019-09-14T18:00:00.000Z",
+            "arrivalDate" : "2019-09-14T21:00:00.000Z",
+            "price" : "2580"
+        },
+        {
+            "flightNo" : "AI-202",
+            "origin" : "Mumbai",
+            "destination" : "Delhi",
+            "departureDate" : "2019-09-14T14:00:00.000Z",
+            "arrivalDate" : "2019-09-14T18:00:00.000Z",
+            "price" : "3200"
+        },
+        {
+            "flightNo" : "AI-201",
+            "origin" : "Delhi",
+            "destination" : "Mumbai",
+            "departureDate" : "2019-09-15T18:00:00.000Z",
+            "arrivalDate" : "2019-09-15T21:00:00.000Z",
+            "price" : "2570"
+        },
+        {
+            "flightNo" : "AI-202",
+            "origin" : "Mumbai",
+            "destination" : "Delhi",
+            "departureDate" : "2019-09-16T14:00:00.000Z",
+            "arrivalDate" : "2019-09-16T18:00:00.000Z",
+            "price" : "3200"
+        },
+        {
+            "flightNo" : "AI-201",
+            "origin" : "Delhi",
+            "destination" : "Mumbai",
+            "departureDate" : "2019-09-18T18:00:00.000Z",
+            "arrivalDate" : "2019-09-18T21:00:00.000Z",
+            "price" : "2200"
+        },
+        {
+            "flightNo" : "AI-202",
+            "origin" : "Mumbai",
+            "destination" : "Delhi",
+            "departureDate" : "2019-09-18T14:00:00.000Z",
+            "arrivalDate" : "2019-09-18T18:00:00.000Z",
+            "price" : "3200"
+        },
+        {
+            "flightNo" : "AI-201",
+            "origin" : "Delhi",
+            "destination" : "Mumbai",
+            "departureDate" : "2019-09-20T18:00:00.000Z",
+            "arrivalDate" : "2019-09-20T21:00:00.000Z",
+            "price" : "2600"
+        },
+        {
+            "flightNo" : "AI-202",
+            "origin" : "Mumbai",
+            "destination" : "Delhi",
+            "departureDate" : "2019-09-20T14:00:00.000Z",
+            "arrivalDate" : "2019-09-20T18:00:00.000Z",
+            "price" : "3200"
+        },
+        {
+            "flightNo" : "AI-201",
+            "origin" : "Delhi",
+            "destination" : "Mumbai",
+            "departureDate" : "2019-09-22T18:00:00.000Z",
+            "arrivalDate" : "2019-09-22T21:00:00.000Z",
+            "price" : "5500"
+        },
+        {
+            "flightNo" : "AI-202",
+            "origin" : "Mumbai",
+            "destination" : "Delhi",
+            "departureDate" : "2019-09-22T14:00:00.000Z",
+            "arrivalDate" : "2019-09-22T18:00:00.000Z",
+            "price" : "1200"
+        },
+        {
+            "flightNo" : "AI-201",
+            "origin" : "Delhi",
+            "destination" : "Mumbai",
+            "departureDate" : "2019-09-25T18:00:00.000Z",
+            "arrivalDate" : "2019-09-25T21:00:00.000Z",
+            "price" : "5500"
+        },
+        {
+            "flightNo" : "AI-202",
+            "origin" : "Mumbai",
+            "destination" : "Delhi",
+            "departureDate" : "2019-09-25T14:00:00.000Z",
+            "arrivalDate" : "2019-09-25T18:00:00.000Z",
+            "price" : "1200"
+        },
+        {
+            "flightNo" : "AI-301",
+            "origin" : "Mumbai",
+            "destination" : "Kochi",
+            "departureDate" : "2019-09-10T18:00:00.000Z",
+            "arrivalDate" : "2019-09-10T21:00:00.000Z",
+            "price" : "2200"
+        },
+        {
+            "flightNo" : "AI-302",
+            "origin" : "Kochi",
+            "destination" : "Mumbai",
+            "departureDate" : "2019-09-10T14:00:00.000Z",
+            "arrivalDate" : "2019-09-10T18:00:00.000Z",
+            "price" : "3200"
+        },
+        {
+            "flightNo" : "AI-301",
+            "origin" : "Mumbai",
+            "destination" : "Kochi",
+            "departureDate" : "2019-09-11T18:00:00.000Z",
+            "arrivalDate" : "2019-09-11T21:00:00.000Z",
+            "price" : "2200"
+        },
+        {
+            "flightNo" : "AI-302",
+            "origin" : "Kochi",
+            "destination" : "Mumbai",
+            "departureDate" : "2019-09-11T14:00:00.000Z",
+            "arrivalDate" : "2019-09-11T18:00:00.000Z",
+            "price" : "2200"
+        },
+        {
+            "flightNo" : "AI-301",
+            "origin" : "Mumbai",
+            "destination" : "Kochi",
+            "departureDate" : "2019-09-12T18:00:00.000Z",
+            "arrivalDate" : "2019-09-12T21:00:00.000Z",
+            "price" : "2590"
+        },
+        {
+            "flightNo" : "AI-302",
+            "origin" : "Kochi",
+            "destination" : "Mumbai",
+            "departureDate" : "2019-09-12T14:00:00.000Z",
+            "arrivalDate" : "2019-09-12T18:00:00.000Z",
+            "price" : "3200"
+        },
+        {
+            "flightNo" : "AI-301",
+            "origin" : "Mumbai",
+            "destination" : "Kochi",
+            "departureDate" : "2019-09-14T18:00:00.000Z",
+            "arrivalDate" : "2019-09-14T21:00:00.000Z",
+            "price" : "2580"
+        },
+        {
+            "flightNo" : "AI-302",
+            "origin" : "Kochi",
+            "destination" : "Mumbai",
+            "departureDate" : "2019-09-14T14:00:00.000Z",
+            "arrivalDate" : "2019-09-14T18:00:00.000Z",
+            "price" : "3200"
+        },
+        {
+            "flightNo" : "AI-301",
+            "origin" : "Mumbai",
+            "destination" : "Kochi",
+            "departureDate" : "2019-09-15T18:00:00.000Z",
+            "arrivalDate" : "2019-09-15T21:00:00.000Z",
+            "price" : "2570"
+        },
+        {
+            "flightNo" : "AI-302",
+            "origin" : "Kochi",
+            "destination" : "Mumbai",
+            "departureDate" : "2019-09-16T14:00:00.000Z",
+            "arrivalDate" : "2019-09-16T18:00:00.000Z",
+            "price" : "3200"
+        },
+        {
+            "flightNo" : "AI-301",
+            "origin" : "Mumbai",
+            "destination" : "Kochi",
+            "departureDate" : "2019-09-18T18:00:00.000Z",
+            "arrivalDate" : "2019-09-18T21:00:00.000Z",
+            "price" : "2200"
+        },
+        {
+            "flightNo" : "AI-302",
+            "origin" : "Kochi",
+            "destination" : "Mumbai",
+            "departureDate" : "2019-09-18T14:00:00.000Z",
+            "arrivalDate" : "2019-09-18T18:00:00.000Z",
+            "price" : "3200"
+        },
+        {
+            "flightNo" : "AI-301",
+            "origin" : "Mumbai",
+            "destination" : "Kochi",
+            "departureDate" : "2019-09-20T18:00:00.000Z",
+            "arrivalDate" : "2019-09-20T21:00:00.000Z",
+            "price" : "2600"
+        },
+        {
+            "flightNo" : "AI-302",
+            "origin" : "Kochi",
+            "destination" : "Mumbai",
+            "departureDate" : "2019-09-20T14:00:00.000Z",
+            "arrivalDate" : "2019-09-20T18:00:00.000Z",
+            "price" : "3200"
+        },
+        {
+            "flightNo" : "AI-301",
+            "origin" : "Mumbai",
+            "destination" : "Kochi",
+            "departureDate" : "2019-09-22T18:00:00.000Z",
+            "arrivalDate" : "2019-09-22T21:00:00.000Z",
+            "price" : "5500"
+        },
+        {
+            "flightNo" : "AI-302",
+            "origin" : "Kochi",
+            "destination" : "Mumbai",
+            "departureDate" : "2019-09-22T14:00:00.000Z",
+            "arrivalDate" : "2019-09-22T18:00:00.000Z",
+            "price" : "1200"
+        },
+        {
+            "flightNo" : "AI-301",
+            "origin" : "Mumbai",
+            "destination" : "Kochi",
+            "departureDate" : "2019-09-25T18:00:00.000Z",
+            "arrivalDate" : "2019-09-25T21:00:00.000Z",
+            "price" : "5500"
+        },
+        {
+            "flightNo" : "AI-302",
+            "origin" : "Kochi",
+            "destination" : "Mumbai",
+            "departureDate" : "2019-09-25T14:00:00.000Z",
+            "arrivalDate" : "2019-09-25T18:00:00.000Z",
+            "price" : "1200"
         }
-
     ]
 }

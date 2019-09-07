@@ -91,14 +91,14 @@ input[type="submit"]
     appearance: none;
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
-    background: #1abc9c; /* Green background */
+    background: #28a745; /* Green background */
     cursor: pointer; /* Cursor on hover */
 }
 
 .slider::-moz-range-thumb {
     width: 25px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
-    background: #1abc9c; /* Green background */
+    background: #28a745; /* Green background */
     cursor: pointer; /* Cursor on hover */
 }
 

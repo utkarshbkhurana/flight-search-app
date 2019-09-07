@@ -4,3 +4,8 @@
 body {
     font-family: Helvetica, "Times New Roman", Times, serif;
 }
+
+html, body {
+    min-height: 100% !important;
+    height: 100%;
+}

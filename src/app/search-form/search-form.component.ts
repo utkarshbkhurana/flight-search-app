@@ -9,29 +9,33 @@ import { SearchService } from '../services/search.service';
 })
 export class SearchFormComponent implements OnInit {
 
-  @Input() isOneWay: boolean;
+  isOneWay = true;
   @Output() onFlightSearch = new EventEmitter();
   sourceCity: string = '';
   departureDate: string = '';
-  arrivalDate: string = '';
-  destinationCity: string ='';
+  returnDate: string = '';
+  destinationCity: string = '';
   allFlights: any;
   flightData = {
-    'outgoing' : '',
-    'incoming' : ''
+    'flights': [],
+    'roundTrip': false,
+    'origin': '',
+    'destination': '',
+    'returnDate': '',
+    'departureDate': ''
   };
   showResults: boolean = false;
   maxPrice: any = 10000;
-  constructor( private searchService: SearchService) { }
+  constructor(private searchService: SearchService) { }
 
   ngOnInit() {
     this.getAllFlights();
   }
 
 
-  async getAllFlights(){
+  async getAllFlights() {
     let data = await this.searchService.getSearchResults().toPromise();
-    if(data) {
+    if (data) {
       this.allFlights = data;
     }
     else {
@@ -41,64 +45,110 @@ export class SearchFormComponent implements OnInit {
 
   getSearchResults() {
     this.resetResults();
-    if(this.sourceCity === '') {
-      document.getElementById('source-alert').style.display = 'block';
+    if (!this.validateForm())
       return;
-    }
-    if(this.destinationCity === '') {
-      document.getElementById('dest-alert').style.display = 'block';
-      return;
-    }
     this.getAllFlights();
-    console.log('got flights',this.allFlights)
-          /* filter outgoing flights */
-    this.filterFlights(true,this.sourceCity,this.destinationCity,this.departureDate,this.maxPrice);
-    if (!this.isOneWay) {
-      /* filter incoming flights */
-      this.filterFlights(false,this.destinationCity,this.sourceCity,this.arrivalDate,this.maxPrice);
-      
+    console.log('got flights', this.allFlights)
+    this.flightData.origin = this.sourceCity;
+    this.flightData.destination = this.destinationCity;
+    this.flightData.departureDate = this.departureDate;
+    if (this.isOneWay) {
+      this.getOneWayFlights(this.destinationCity, this.sourceCity, this.departureDate, this.maxPrice);
     }
+    else {
+      this.flightData.roundTrip = true;
+      this.flightData.returnDate = this.returnDate;
+      this.getRoundTrips(this.destinationCity, this.sourceCity, this.departureDate, this.returnDate, this.maxPrice)
+    }
+
     this.showResults = true;
-    this.onFlightSearch.emit({searchResults: this.flightData});
+    this.onFlightSearch.emit({ searchResults: this.flightData });
   }
 
   resetResults() {
     document.getElementById('source-alert').style.display = '';
     document.getElementById('dest-alert').style.display = '';
+    document.getElementById('depart-alert').style.display = '';
+    document.getElementById('return-alert').style.display = '';
     this.showResults = false;
+    this.flightData.flights = []
   }
- 
-  filterFlights(isOutgoing: boolean, source: string, dest: string, doa: string, priceLimit: number) {
-    console.log(doa)
-    if (isOutgoing) {
-      this.flightData.outgoing = this.allFlights['flights'].filter(
-        item => {
-          if (doa && doa !== '') {
-            console.log('is doa',doa==='')
-            return item['origin'] === (source.toLowerCase()) &&
-              item['destination'] === (dest.toLowerCase()) &&
-              parseInt(item['price']) <= priceLimit && item['date'] === doa;
-          }
-          else return item['origin'] === (source.toLowerCase()) &&
-            item['destination'] === (dest.toLowerCase()) &&
-            parseInt(item['price']) <= priceLimit;
 
-        });
-    } else {
-      console.log('is doa',doa==='')
-      this.flightData.incoming = this.allFlights['flights'].filter(
-        item => {
-          if (doa && doa !== '') {
-            return item['origin'] === (source.toLowerCase()) &&
-              item['destination'] === (dest.toLowerCase()) &&
-              parseInt(item['price']) <= priceLimit && item['date'] === doa;
-          }
-          else return true //return item['origin'] === (source.toLowerCase()) &&
-            item['destination'] === (dest.toLowerCase()) &&
-            parseInt(item['price']) <= priceLimit;
+  getOneWayFlights(source: string, dest: string, departureDate: string, priceLimit: number) {
+    this.flightData.flights = this.allFlights.flights.filter(
+      flight => {
+        return (flight.origin.toLowerCase()) === (source.toLowerCase()) &&
+          (flight.destination.toLowerCase()) === (dest.toLowerCase()) &&
+          parseInt(flight.price) <= priceLimit && this.compareDates(departureDate, flight.departureDate);
+      });
+  }
 
-        });
+  getRoundTrips(source: string, dest: string, departureDate: string, returnDate: string, priceLimit: number) {
+    let forwardFlights = this.allFlights.flights.filter(
+      flight => {
+        return (flight.origin.toLowerCase()) === (source.toLowerCase()) &&
+          (flight.destination.toLowerCase()) === (dest.toLowerCase()) &&
+          parseInt(flight.price) <= priceLimit && this.compareDates(departureDate, flight.departureDate);
+      });
+    let returnFlights = this.allFlights.flights.filter(
+      flight => {
+        return (flight.origin.toLowerCase()) === (dest.toLowerCase()) &&
+          (flight.destination.toLowerCase()) === (source.toLowerCase()) &&
+          parseInt(flight.price) <= priceLimit && this.compareDates(returnDate, flight.departureDate);
+      });
+    for (let forwardFlight of forwardFlights) {
+      for (let returnFlight of returnFlights) {
+        let price = parseInt(forwardFlight.price) + parseInt(returnFlight.price);
+        if (price <= priceLimit)
+          this.flightData.flights.push({
+            "roundTrip": true,
+            "flightNo1": forwardFlight.flightNo,
+            "flightNo2": returnFlight.flightNo,
+            "origin": forwardFlight.origin,
+            "destination": forwardFlight.destination,
+            "departureDate1": forwardFlight.departureDate,
+            "arrivalDate1": forwardFlight.arrivalDate,
+            "departureDate2": returnFlight.departureDate,
+            "arrivalDate2": returnFlight.arrivalDate,
+            "price": parseInt(forwardFlight.price) + parseInt(returnFlight.price)
+          })
+      }
     }
   }
 
+  validateForm() {
+    if (this.sourceCity === '') {
+      document.getElementById('source-alert').style.display = 'block';
+      return false;
+    }
+    if (this.destinationCity === '') {
+      document.getElementById('dest-alert').style.display = 'block';
+      return false;
+    }
+    if (this.departureDate === '') {
+      document.getElementById('depart-alert').style.display = 'block';
+      return false;
+    }
+    if (this.returnDate === '' && !this.isOneWay) {
+      document.getElementById('return-alert').style.display = 'block';
+      return false;
+    }
+    return true;
+  }
+
+  compareDates(a, b) {
+    return new Date(a).toDateString() === new Date(b).toDateString();
+  }
+
+  toggleOneWay(oneWay) {
+    this.isOneWay = oneWay;
+    if (oneWay) {
+      document.getElementById('one-way').classList.add('active');
+      document.getElementById('round-trip').classList.remove('active');
+    }
+    else {
+      document.getElementById('one-way').classList.remove('active');
+      document.getElementById('round-trip').classList.add('active');
+    }
+  }
 }

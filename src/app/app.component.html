@@ -1,11 +1,14 @@
-<app-header></app-header>
-
 <div id="app-container">
-    <search-form (onFlightSearch)="displaySearchResults($event)"></search-form>
-    <search-results [flightData]="flightData" *ngIf="showResults"></search-results>
+    <app-header></app-header>
+
+    <div id="app-content">
+        <div id="search">
+            <search-form (onFlightSearch)="displaySearchResults($event)"></search-form>
+        </div>
+        <div id="results">
+            <search-results [flightData]="flightData" *ngIf="showResults"></search-results>
+        </div>
+    </div>
+
+    <!-- <app-footer></app-footer> -->
 </div>
-  
-<router-outlet></router-outlet>
-
-
-<app-footer></app-footer>

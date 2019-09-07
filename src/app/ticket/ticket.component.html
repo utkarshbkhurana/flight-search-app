@@ -1,3 +1,31 @@
-<p>
-  ticket works!
-</p>
+<div class="ticket">
+    <div class="flight-details">
+        <div class="flight-price">
+            <span class="price-text">Rs. {{flight.price}}</span>
+        </div>
+        <div class="flight-info" *ngIf="!flight.roundTrip">
+            <span class="flight-no">{{flight.flightNo}}</span>
+            <span class="flight-text">{{flight.origin}} > {{flight.destination}}</span>
+            <span class="flight-text">Depart: {{flight.departureDate}}</span>
+            <span class="flight-text">Arrive: {{flight.arrivalDate}}</span>
+        </div>
+        <div class="round-trip-info" *ngIf="flight.roundTrip">
+            <div class="flight-info">
+                <span class="flight-no">{{flight.flightNo1}}</span>
+                <span class="flight-text">{{flight.origin}} > {{flight.destination}}</span>
+                <span class="flight-text">Depart: {{flight.departureDate1}}</span>
+                <span class="flight-text">Arrive: {{flight.arrivalDate1}}</span>
+            </div>
+            <div class="flight-info">
+                <span class="flight-no">{{flight.flightNo2}}</span>
+                <span class="flight-text">{{flight.destination}} > {{flight.origin}}</span>
+                <span class="flight-text">Depart: {{flight.departureDate2}}</span>
+                <span class="flight-text">Arrive: {{flight.arrivalDate2}}</span>
+            </div>
+        </div>
+    </div>
+    <div class="book-flight">
+        <img src="" alt="">
+        <button>Book this flight</button>
+    </div>
+</div>

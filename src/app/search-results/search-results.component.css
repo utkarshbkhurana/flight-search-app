@@ -5,24 +5,10 @@
     margin-top: 20px;
 }
 
-.forwardsTrips, .returnTrips {
-    display: block; 
-}
-
-li {
-    list-style: none;
-}
-
-.forwardsTrips li {
-    padding: 5px;
-    background: #65e465;
-    border: 1px solid #2a882a;
-    margin: 10px 0;
-}
-
-.returnTrips li {
-    padding: 5px;
-    background: #e46965;
-    border: 1px solid #2a882a;
-    margin: 10px 0;
+.results-header {
+    padding: 20px;
+    font-size: 25px;
+    background: #eeeeee;
+    display: flex;
+    justify-content: space-between
 }

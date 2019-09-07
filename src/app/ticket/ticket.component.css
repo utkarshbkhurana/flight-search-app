@@ -1,0 +1,79 @@
+.ticket {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #d1d5da;
+    border-radius: 3px;
+    display: flex;
+}
+
+.flight-details {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.flight-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.round-trip-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    background-color: #28a745;
+    background-image: linear-gradient(-180deg,#34d058,#28a745 90%);
+    padding: 3px 10px !important;
+    font-size: 12px !important;
+    line-height: 20px !important;
+    color: #fff !important;
+    width: auto !important;
+    position: relative;
+    display: inline-block;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    line-height: 20px !important;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-repeat: repeat-x;
+    background-position: -1px -1px;
+    background-size: 110% 110%;
+    border: 1px solid rgba(27,31,35,.2);
+    border-radius: .25em;
+    -webkit-appearance: none;   
+}
+
+button:hover {
+    background-color: #269f42;
+    background-image: linear-gradient(-180deg,#2fcb53,#269f42 90%);
+    background-position: -.5em;
+    border-color: rgba(27,31,35,.5);
+}
+
+.flight-price {
+    margin-bottom: 10px;
+}
+
+.price-text {
+    font-size: 2em;
+    font-weight: 600;
+}
+
+
+.flight-no {
+    font-size: 14px;
+}
+
+.flight-text {
+    font-size: 20px;
+    font-weight: 500;
+}
+

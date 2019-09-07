@@ -1,24 +1,16 @@
+<div class="results-header">
+  <div>{{flightData.origin.toUpperCase()}} >
+    {{flightData.destination.toUpperCase()}}{{flightData.roundTrip ? ' > ' + flightData.origin.toUpperCase()  : ''}}
+  </div>
+  <div style="font-size:16px">
+    Depart: {{flightData.departureDate}} <br>
+    {{flightData.roundTrip ? 'Return: ' + flightData.returnDate : ''}}
+  </div>
+</div>
 <div id="search-results">
-    <ul class="forwardsTrips">
-      <span><b>Outgoing Flights</b></span> <br><br>
-      <li *ngFor="let flight of flightData?.outgoing">
-        Flight No.: {{flight.flightNo}}<br>
-        Origin: {{flight.origin}}<br> 
-        Destination: {{flight.destination}}<br>
-        Date: {{flight.date}}<br>
-        Price: {{flight.price}}<br>
-      </li>
-      <span *ngIf="flightData?.outgoing.length===0">No flights found from "{{sourceCity}}" to "{{destinationCity}}"</span>
-      </ul>
-    <ul *ngIf="!isOneWay" class="returnTrips">
-      <span><b>Incoming Flights</b></span> <br><br>
-        <li *ngFor="let flight of flightData?.incoming">
-          Flight No.: {{flight.flightNo}}<br>
-          Origin: {{flight.origin}}<br>
-          Destination: {{flight.destination}}<br>
-          Date: {{flight.date}}<br>
-          Price: {{flight.price}}<br>
-        </li>
-        <span *ngIf="flightData?.incoming.length===0">No flights found from "{{destinationCity}}" to "{{sourceCity}}"</span>
-    </ul>
+  <ticket [flight]="flight" *ngFor="let flight of flightData.flights"></ticket>
+</div>
+
+<div *ngIf="flightData.flights.length===0">
+  <span style="padding: 10px">No Flights found for give search criteria.</span>
 </div>
